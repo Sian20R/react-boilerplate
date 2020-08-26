@@ -1,8 +1,11 @@
 import React from 'react';
 
-const ExpenseDashboardPage = () => (
-    <div>
-        Dashboard Page Content
-    </div>
-);
-export default ExpenseDashboardPage;
+const DashboardPage = () => {
+    return (
+        <div>
+            Dashboard Page Content
+        </div>
+    )
+}
+
+export default DashboardPage;

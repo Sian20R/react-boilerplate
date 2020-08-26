@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { startLogout } from '../actions/auth'; 
 
-export const Header = ({ startLogout }) => (
-    <header className="header">
+import  AuthContext  from './../context/auth';
+
+const onLogout = () => {
+    dispatch({ type: 'SET_LOGOUT'});
+    window.location.href = `http://localhost:8080/login`;
+}
+  
+const Header = ({ component: Component, ...rest }) => {
+    const { authContext } = useContext(AuthContext);
+   
+    return (
+        <header className="header">
         <div className="content-container">
             <div className="header__content">
                 <Link className="header__title "to="/dashboard">
                     <h1>Boilerplate</h1>
                 </Link>
-                <button className="button button--link" onClick={startLogout}>Logout</button>
+                <button className="button button--link" onClick={onLogout}>Logout</button>
             </div>
         </div>
     </header>
-);
+    );
+}
 
-const mapDispatchToProps = (dispatch) => ({
-    startLogout: () => dispatch(startLogout())
-});
-  
-export default connect(undefined, mapDispatchToProps)(Header);
+export default Header;

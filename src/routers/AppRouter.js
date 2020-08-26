@@ -1,24 +1,20 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
-const createHistory = require("history").createBrowserHistory;
+import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import NotFoundPage from '../components/NotFound';
 import LoginPage from '../components/Login';
 import DashboardPage from '../components/Dashboard';
 import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoute';
-
-export const history = createHistory();
 
 const AppRouter = () => (
-    <Router history={history}>
-     <div>
-       <Switch>
-           <PublicRoute path="/" component={LoginPage} exact={true}/>
-           <PrivateRoute path="/dashboard" component={DashboardPage}/>
-           <Route component={NotFoundPage} />
+    <Router>
+      <div>
+      <Switch>
+            <Route path="/" component={LoginPage} exact={true} />
+            <Route path="/login" component={LoginPage} />
+            <PrivateRoute path="/dashboard" component={DashboardPage} />     
        </Switch> 
-    </div>
+      </div>
+     
    </Router>
 );
 export default AppRouter;
