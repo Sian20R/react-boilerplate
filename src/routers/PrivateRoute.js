@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import Header from './../components/Header';
+import Header from './../components/shared/Header';
 import AuthContext  from "./../context/auth";
 
 

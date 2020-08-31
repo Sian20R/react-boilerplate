@@ -1,0 +1,21 @@
+.appbar {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: black !important;
+}
+
+.appbar-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    background-color: $dark-grey !important;
+    color: $off-white !important;
+    font-size: $m-size;
+}
+
+.appbar-menu-items {
+    cursor: pointer;
+    font-size: $l-size !important;
+    margin: $s-size !important;
+}
